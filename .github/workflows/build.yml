@@ -7,13 +7,13 @@ jobs:
     steps:
       - name: Installing dependencies
         run: |
-          apt install live-build
+          sudo apt install live-build
       - name: Clearing garbage made by manual building that i forgor to clean before upload
         run: |
-          lb clean
+          sudo lb clean
           lb config
       - name: Actuall building
-        run: lb build
+        run: sudo lb build
       - name: Uploading iso
         uses: actions/upload-artifact@v3.1.2
         with:
