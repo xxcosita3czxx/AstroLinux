@@ -7,7 +7,9 @@ jobs:
     steps:
       - name: Installing dependencies
         run: |
+          sudo apt-mark hold grub-efi-amd64-signed
           sudo apt update
+          sudo apt upgrade
           sudo apt install live-build
       - name: Clearing garbage made by manual building that i forgor to clean before upload
         run: |
